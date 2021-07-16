@@ -16,10 +16,11 @@ RUN ln -s /usr/local/bin/pip3.6 /usr/local/bin/pip3
 RUN rm -rf /usr/bin/python3
 RUN ln -s /usr/bin/python3.6 /usr/bin/python3
 
-RUN adduser jenkins
+RUN jenkins -ms /bin/bash jenkins
+USER jenkins
 
-COPY . /app
-WORKDIR /app
+COPY . /home/jenkins
+WORKDIR /home/jenkins
 RUN pip3 install -r requirements.txt
 
 CMD ["python3.6", "app.py"]
