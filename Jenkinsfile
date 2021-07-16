@@ -3,6 +3,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
+        sh 'who'
         sh 'whoami'
         sh 'pip install -r requirements.txt'
       }
