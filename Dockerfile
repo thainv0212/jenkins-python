@@ -17,6 +17,6 @@ RUN ln -s /usr/local/bin/pip3.6 /usr/local/bin/pip3
 RUN rm -rf /usr/bin/python3
 RUN ln -s /usr/bin/python3.6 /usr/bin/python3
 
-RUN /usr/local/bin/pip3 install -r requirements.txt
+RUN pip3 install -r requirements.txt
 
 CMD ["python3.6", "app.py"]
