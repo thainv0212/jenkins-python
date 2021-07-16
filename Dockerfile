@@ -16,7 +16,7 @@ RUN ln -s /usr/local/bin/pip3.6 /usr/local/bin/pip3
 RUN rm -rf /usr/bin/python3
 RUN ln -s /usr/bin/python3.6 /usr/bin/python3
 
-RUN jenkins -ms /bin/bash jenkins
+RUN useradd -ms /bin/bash jenkins
 USER jenkins
 
 COPY . /home/jenkins
