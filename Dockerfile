@@ -8,6 +8,7 @@ RUN apt-get update && \
     apt-get install python3.6 python3.6-dev python3.6-venv -y && \ 
     rm -rf /var/lib/apt/lists/*
 
+COPY . /app
 WORKDIR /app
 RUN wget https://bootstrap.pypa.io/get-pip.py
 RUN python3.6 get-pip.py
@@ -16,11 +17,6 @@ RUN ln -s /usr/local/bin/pip3.6 /usr/local/bin/pip3
 RUN rm -rf /usr/bin/python3
 RUN ln -s /usr/bin/python3.6 /usr/bin/python3
 
-RUN useradd -ms /bin/bash jenkins
-USER jenkins
-
-COPY . /home/jenkins
-WORKDIR /home/jenkins
 RUN /usr/local/bin/pip3 install -r requirements.txt
 
 CMD ["python3.6", "app.py"]
