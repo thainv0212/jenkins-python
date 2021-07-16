@@ -3,13 +3,8 @@ pipeline {
   stages {
     stage('test') {
       steps {
-        sh 'python test.py'
-      }
-      post {
-        always {
-          junit 'test-reports/*.xml'
-        }
-      }    
+        sh 'python3.6 test.py'
+      }  
     }
   }
 }
