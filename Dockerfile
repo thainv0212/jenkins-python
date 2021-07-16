@@ -21,6 +21,6 @@ USER jenkins
 
 COPY . /home/jenkins
 WORKDIR /home/jenkins
-RUN pip3 install -r requirements.txt
+RUN /usr/local/bin/pip3 install -r requirements.txt
 
 CMD ["python3.6", "app.py"]
