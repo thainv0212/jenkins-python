@@ -5,6 +5,7 @@ pipeline {
       steps {
         sh 'cd && pwd'
         sh 'ls /home/'
+        sh 'ls /'
         sh 'whoami'
         sh 'pip install -r requirements.txt'
       }
