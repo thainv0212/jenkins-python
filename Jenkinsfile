@@ -4,6 +4,7 @@ pipeline {
     stage('build') {
       steps {
         sh 'cd && pwd'
+        sh 'ls /home/'
         sh 'whoami'
         sh 'pip install -r requirements.txt'
       }
