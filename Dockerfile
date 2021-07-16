@@ -16,6 +16,8 @@ RUN ln -s /usr/local/bin/pip3.6 /usr/local/bin/pip3
 RUN rm -rf /usr/bin/python3
 RUN ln -s /usr/bin/python3.6 /usr/bin/python3
 
+RUN adduser jenkins
+
 COPY . /app
 WORKDIR /app
 RUN pip3 install -r requirements.txt
